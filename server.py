@@ -7,7 +7,7 @@ app.secret_key = "someFancySecret"
 
 app.jinja_env.undefined = StrictUndefined
 
-app.route('/')
+@app.route('/')
 def index():
 	return render_template("index.html")
 
