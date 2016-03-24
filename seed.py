@@ -5,6 +5,7 @@ def load_questions():
 	for i, row in enumerate(open("questions.csv")):
 		row = row.rstrip()
 		strand_id, strand_name, standard_id, standard_name, question_id, difficulty = row.split(",")
+		print "this is the stuff",  strand_id, standard_name
 		strand_id= int(strand_id)
 		question_id=int(question_id)
 		standard_id=int(standard_id)
@@ -20,13 +21,15 @@ def load_usage():
 
 	for i, row in enumerate(open("usage.csv")):
 		row = row.rstrip()
-
-		usage_id, student_id, question_id, assigned_hours_ago, answered_hours_ago= row.split(",")
-		student_id=int(student_id)
-		usage_id=int(usage_id)
-		question_id=int(question_id)
-		assigned_hours_ago=int(assigned_hours_ago)
-		answered_hours_ago=int(answered_hours_ago)
+		row = row.split(",")
+		print "this is the row: ", row
+		print len(row)
+		usage_id, student_id, question_id, assigned_hours_ago, answered_hours_ago= row
+		# student_id=int(student_id)
+		# usage_id=int(usage_id)
+		# question_id=int(question_id)
+		# assigned_hours_ago=int(assigned_hours_ago)
+		# answered_hours_ago=int(answered_hours_ago)
 		usage = Usage(student_id=student_id, question_id=question_id, assigned_hours_ago=assigned_hours_ago, answered_hours_ago=answered_hours_ago)
 		db.session.add(usage)
 	db.session.commit()
