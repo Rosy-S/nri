@@ -36,6 +36,8 @@ def get_question():
 				break
 			results.append(strand_2_questions[randrange(0,strand_2_questions_amount)].question_id)
 			resp -=1
+		# Tim sort algorithm in Python is optimized to be the fastest than any native algorigthm we can implement
+
 		results.sort()
 
 
