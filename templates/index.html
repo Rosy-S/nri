@@ -1,10 +1,15 @@
 <!doctype html>
 <html>
+{% for flash in get_flashed_messages() %}
+  <div class='alert alert-success'>{{ flash }}</div>
+{% endfor %}
 <body>
-	<form action"/" method="POST">
+	<form action"/response" method="POST">
 		<h2> Enter how many questions you want on the test </h2>
 		<label> Amount: </label>
 		<input type="text" id="questionamount" name="question_amount">
+		<input class='button' type="submit" value="question">
+	</form>
 
 </body>
 </html>

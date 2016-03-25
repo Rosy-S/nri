@@ -28,6 +28,8 @@ class Usage(db.Model):
 
 						   backref=db.backref("question_usage", order_by=question_id))
 
+def get_count(data):
+	return session.query(Questions).count()
 
 
 def connect_to_db(app):
